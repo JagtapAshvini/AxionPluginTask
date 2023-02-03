@@ -9,7 +9,20 @@
 plugins {
     // Apply the java-library plugin to add support for Java Library
     id 'java-library'
+    id 'pl.allegro.tech.build.axion-release' version '1.13.2'
+    
 }
+
+scmVersion{
+       branchVersionIncrementer.putAll( [ // use different incrementer per branch
+        //'feature/.*': 'incrementMinor',
+        'I1_axion_plugin' : 'incrementMinor',
+        'release' : [ 'incrementPrerelease', [initialPreReleaseIfNotOnPrerelease: 'rc1']],
+        'master' : 'incrementMinor'
+       ])
+}
+
+project.version = scmVersion.version
 
 dependencies {
     // This dependency is exported to consumers, that is to say found on their compile classpath.
