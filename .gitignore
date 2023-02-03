@@ -1,0 +1,11 @@
+.metadata
+RemoteSystemsTempFiles/
+**/build
+**/bin
+**/.externalToolBuilders
+**/.gradle
+**/.settings
+**/settings.gradle
+**/recommenders
+**/.classpath
+**/.project
